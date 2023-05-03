@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.expensetracker_shops.R.*
 import com.google.firebase.database.DatabaseReference
@@ -49,6 +50,18 @@ class InsertionActivity : AppCompatActivity(){
             shopMobNo.error = "please enter shop's contact number"
         }
         val shopId = dbRef.push().key!!
+
+        val shop = ShopModel(shopId, sName , sAddress, sMob  )
+
+        dbRef.child(shopId).setValue(shop)
+            .addOnCompleteListener {
+                Toast.makeText(this,"Data Inserted Successfully!",Toast.LENGTH_LONG).show()
+                shopName.text.clear()
+                shopAddress.text.clear()
+                shopMobNo.text.clear()
+            }.addOnFailureListener{ error ->
+                Toast.makeText(this, "Error ${error.message}",Toast.LENGTH_LONG).show()
+            }
     }
 
 }
