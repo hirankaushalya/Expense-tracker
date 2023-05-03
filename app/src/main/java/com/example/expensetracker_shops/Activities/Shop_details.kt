@@ -1,5 +1,6 @@
 package com.example.expensetracker_shops.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,8 +18,8 @@ class Shop_details : AppCompatActivity() {
     private lateinit var tvShopName :TextView
     private lateinit var tvShopAddress :TextView
     private lateinit var tvShopMob :TextView
-    private lateinit var btnUpdate :TextView
-    private lateinit var btnDelete :TextView
+    private lateinit var btnUpdate :Button
+    private lateinit var btnDelete :Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,31 @@ class Shop_details : AppCompatActivity() {
                 intent.getStringExtra("shopMobNo").toString()
             )
         }
+        btnDelete.setOnClickListener{
+            deleteRecords(
+                intent.getStringExtra("shopId").toString(),
+
+                )
+        }
     }
+
+    private fun deleteRecords(
+        shopId:String
+        ){
+        val dbRef = FirebaseDatabase.getInstance().getReference("Shops").child(shopId)
+        val mTask = dbRef.removeValue()
+
+        mTask.addOnSuccessListener {
+            Toast.makeText(this,"Shop data deleted",Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this,FetchingActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener{ error ->
+            Toast.makeText(this,"Deleting Err ${error.message}",Toast.LENGTH_LONG).show()
+        }
+    }
+
     private fun openUpdateDialog(
         shopId:String,
         shopName:String,
@@ -80,6 +105,7 @@ class Shop_details : AppCompatActivity() {
 
             alertDialog.dismiss()
         }
+
 
 
     }
