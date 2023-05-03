@@ -1,4 +1,4 @@
-package com.example.expensetracker_shops
+package com.example.expensetracker_shops.Models
 
 data class ShopModel(
     var shopId : String? = null ,

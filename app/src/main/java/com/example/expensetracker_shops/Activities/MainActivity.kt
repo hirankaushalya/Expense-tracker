@@ -1,11 +1,10 @@
-package com.example.expensetracker_shops
+package com.example.expensetracker_shops.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.example.expensetracker_shops.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnFetchData.setOnClickListener {
-            //val intent = Intent(this, FetchingActivity::class.java)
+            val intent = Intent(this, FetchingActivity::class.java)
             startActivity(intent)
         }
 
