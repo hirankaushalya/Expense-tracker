@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExpenseTrackerShops">
         <activity
+            android:name=".Activities.updateDialog"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.Shop_details"
             android:exported="true">
             <meta-data
