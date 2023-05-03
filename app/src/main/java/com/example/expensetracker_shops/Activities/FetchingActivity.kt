@@ -1,5 +1,6 @@
 package com.example.expensetracker_shops.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -46,6 +47,19 @@ class FetchingActivity : AppCompatActivity() {
                     }
                     val mAdapter = ShopAdapter(shopList)
                     shopRView.adapter = mAdapter
+
+                    mAdapter.setOnItemClickListener(object : ShopAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(this@FetchingActivity, Shop_details::class.java)
+
+                            intent.putExtra("shopId",shopList[position].shopId)
+                            intent.putExtra("shopName",shopList[position].shopName)
+                            intent.putExtra("shopAddress",shopList[position].shopAddress)
+                            intent.putExtra("shopMobNo",shopList[position].shopMobNo)
+                            startActivity(intent)
+                        }
+
+                    })
 
                     shopRView.visibility = View.VISIBLE
                     tvLoadingData.visibility= View.GONE
