@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Expense Tracker-Shops</string>
+    <string name="ET">Expense Tracker</string>
+    <string name="nearshops">Shops Near You </string>
+    <string name="addShop">Add Shops</string>
+    <string name="seeShop">Shops</string>
+    <string name="upShop">Update Shops</string>
+    <string name="delShop">Delete Shops</string>
+    <string name="id">Shop Id</string>
+    <string name="name">Shop Name</string>
+    <string name="address">Shop Address</string>
+    <string name="contact">Shop Contact</string>
+    <string name="ESname">Enter Shop Name</string>
+    <string name="ESaddress">Enter Shop Address</string>
+    <string name="ESmob">Enter Shop Contact Number</string>
+    <string name="saveShop">Save Shop</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_200"
     tools:context=".Activities.Shop_details">
 
     <Button
@@ -11,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Update"
-        android:textColor="@color/white"
-        android:background="@color/black"
+        android:text="@string/upShop"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:background="@color/yellow"
         app:layout_constraintEnd_toStartOf="@+id/btnDelete"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,9 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Delete"
-        android:textColor="@color/white"
-        android:background="@color/black"
+        android:text="@string/delShop"
+        android:textColor="@color/black"
+        android:background="@color/red"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnUpdate"
@@ -65,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Shop id"
+                    android:text="@string/id"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -114,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Shop Name"
+                    android:text="@string/name"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -164,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Shop Address"
+                    android:text="@string/address"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -219,7 +222,7 @@
                     android:layout_gravity="center"
 
                     android:gravity="center"
-                    android:text="Shop Contact"
+                    android:text="@string/contact"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 

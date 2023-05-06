@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
+    android:background="@color/purple_200"
     android:layout_margin="8dp">
 
     <LinearLayout
@@ -25,7 +26,7 @@
                 android:id="@+id/tvShopName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shop Name"
+                android:text="@string/name"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/black"

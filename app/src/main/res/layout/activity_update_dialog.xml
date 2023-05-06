@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="@color/purple_200"
     tools:context=".Activities.updateDialog">
 
     <EditText
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Shop Name"
+        android:hint="@string/name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Shop Address" />
+        android:hint="@string/address" />
 
     <EditText
         android:id="@+id/upShopMob"
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Shop Contact"
+        android:hint="@string/contact"
         android:inputType="textPersonName" />
 
     <Button
@@ -38,9 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Update Data"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:text="@string/upShop"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:background="@color/yellow"/>
 
 
 </LinearLayout>
