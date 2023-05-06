@@ -41,7 +41,7 @@ class SignUpActivity : AppCompatActivity() {
         reenter_password = findViewById(R.id.reg_again)
 
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()//create instance of firebase
         binding.signup.setOnClickListener{
             val email = binding.regEmail.text.toString()
             val pass = binding.regPassword.text.toString()
@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener{
                         if(it.isSuccessful){
                             val intent = Intent(this,SigninActivity::class.java)
-                            startActivity(intent)
+                            startActivity(intent)//set sucessfull intent
                         }else{
                             Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
                         }

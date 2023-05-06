@@ -10,7 +10,7 @@ import com.example.room_user.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application) : AndroidViewModel(application) {
+class  UserViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllData: LiveData<List<User>>
     private val repository: UserRepository

@@ -44,6 +44,7 @@ class AddTransactionActivity : AppCompatActivity() {
 
         imageButton = findViewById(R.id.closeBtn)
 
+        //add TextChangelistner for change color of input fields when type something
         labelInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -54,6 +55,7 @@ class AddTransactionActivity : AppCompatActivity() {
             }
         })
 
+        //add TextChangelistner for change color of input fields when type something
         amountInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

@@ -22,7 +22,7 @@ class SigninActivity : AppCompatActivity() {
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()//create firbase instance
         binding.switchSignup.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
@@ -30,6 +30,7 @@ class SigninActivity : AppCompatActivity() {
 
         signinBtn = findViewById(R.id.login)
 
+        //set onclicklister for login button
         binding.login.setOnClickListener{
             val email = binding.loginEmail.text.toString()
             val pass = binding.loginPwd.text.toString()
@@ -39,7 +40,7 @@ class SigninActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener{
                     if(it.isSuccessful){
                         val intent = Intent(this,SecondActivity::class.java)
-                        startActivity(intent)
+                        startActivity(intent)//set successfull intenet
                     }else{
                         Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
                     }
