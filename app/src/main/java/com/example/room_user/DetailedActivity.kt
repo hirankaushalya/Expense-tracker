@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 
 class DetailedActivity : AppCompatActivity() {
 
+    //initialize EditText
     private lateinit var transaction: Transaction
     private lateinit var labelInput: EditText
     private lateinit var amountInput: EditText
@@ -39,7 +40,7 @@ class DetailedActivity : AppCompatActivity() {
 
         transaction = intent.getSerializableExtra("transaction") as Transaction
 
-        updateBtn = findViewById(R.id.updateBtn)
+        updateBtn = findViewById(R.id.updateBtn)//get the update button
 
         labelInput = findViewById(R.id.labelInput)
         amountInput = findViewById(R.id.amountInput)
@@ -48,7 +49,7 @@ class DetailedActivity : AppCompatActivity() {
         labelInput.setText(transaction.label)
         amountInput.setText(transaction.amount.toString())
         descriptionInput.setText(transaction.description)
-
+        //get the layout
         labelLayout = findViewById(R.id.labelLayout)
         labelAmount = findViewById(R.id.amountLayout)
         labelDescription = findViewById(R.id.descriptionLayout)
@@ -57,13 +58,14 @@ class DetailedActivity : AppCompatActivity() {
         imageButton = findViewById(R.id.closeBtn)
         updateBtn  = findViewById(R.id.updateBtn)
 
+        //set onclcik listner to clear focus
         rootView.setOnClickListener{
             this.window.decorView.clearFocus()
 
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken,0)
         }
-
+        //add text change method
         labelInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -73,7 +75,7 @@ class DetailedActivity : AppCompatActivity() {
                 }
             }
         })
-
+        //add text change method
         amountInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -83,12 +85,12 @@ class DetailedActivity : AppCompatActivity() {
                 }
             }
         })
-
+        //oncliklistner for updateBtn
         updateBtn.setOnClickListener{
             val label = labelInput.text.toString()
             val amount = amountInput.text.toString().toDoubleOrNull()
             val description = descriptionInput.text.toString()
-
+            //validation part
             if(label.isEmpty()){
                 labelLayout.error = "Please enter a valid label"
             }
@@ -107,7 +109,7 @@ class DetailedActivity : AppCompatActivity() {
     }
 
 
-
+    //add updated data to database
     private fun update(transaction: Transaction){
 
         val  db = Room.databaseBuilder(this,

@@ -14,20 +14,20 @@ class TransactionAdapter(private var transactions: List<Transaction>)
 
     class TransactionHolder(view: View):RecyclerView.ViewHolder(view){
 
-        val label : TextView = view.findViewById(R.id.label)
+        val label : TextView = view.findViewById(R.id.label)//get textview by id
         val amount : TextView = view.findViewById(R.id.amount)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.transaction_layout,parent,false)
-        return TransactionHolder(view)
+        return TransactionHolder(view)//inflate the layout
     }
 
     override fun onBindViewHolder(holder: TransactionHolder, position: Int) {
         val transaction = transactions[position]
         val context = holder.amount.context
-
+        //calculation part for dashboard
         if(transaction.amount >= 0){
             holder.amount.text = "+ Rs.%.2f".format(transaction.amount)
             holder.amount.setTextColor(ContextCompat.getColor(context, R.color.teal_700))

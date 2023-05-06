@@ -22,7 +22,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         val age1: TextView = itemView.findViewById(R.id.age1)
         val rootLayout:ConstraintLayout = itemView.findViewById(R.id.rootLayout)
     }
-
+    //import get custom_row layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.custom_raw, parent, false)
@@ -30,9 +30,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return userList.size//get size of user list
     }
 
+    //Bind with UI
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = userList[position]
 
