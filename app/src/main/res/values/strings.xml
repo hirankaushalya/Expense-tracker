@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Expense App</string>
+    <string name="add_button_description">AddBillPayment</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="rs_3000">Rs.3000</string>
+    <string name="rs_4000">Rs.4000</string>
+    <string name="rs_40000">Rs.40000</string>
+    <string name="budget">Budget</string>
+    <string name="bill_payment">Bill Payment</string>
+    <string name="transactions">Transactions</string>
+    <string name="rs_1000">Rs. 1000</string>
+    <string name="phone_bill">Phone Bill</string>
+    <string name="bill_name_hint">Enter Bill Type</string>
+    <string name="add_bill_payment">Add Bill Payment</string>
+    <string name="label">Label</string>
+    <string name="month">Month</string>
+    <string name="description">Description</string>
+    <string name="amount">Amount</string>
+    <string name="update_bill_payment">Update Bill Payment</string>
+    <string name="close_button">Close button</string>
+</resources>
