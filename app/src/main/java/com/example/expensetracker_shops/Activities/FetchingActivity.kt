@@ -13,10 +13,10 @@ import com.example.expensetracker_shops.R
 import com.google.firebase.database.*
 
 class FetchingActivity : AppCompatActivity() {
-    private lateinit var shopRView : RecyclerView
-    private lateinit var tvLoadingData:TextView
-    private lateinit var shopList : ArrayList<ShopModel>
-    private lateinit var dbRef : DatabaseReference
+    lateinit var shopRView : RecyclerView
+    lateinit var tvLoadingData:TextView
+    lateinit var shopList : ArrayList<ShopModel>
+    lateinit var dbRef : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class FetchingActivity : AppCompatActivity() {
 
         getShopsData()
     }
-    private fun getShopsData(){
+    fun getShopsData(){
         shopRView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 

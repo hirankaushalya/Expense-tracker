@@ -12,12 +12,12 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class InsertionActivity : AppCompatActivity(){
-    private lateinit var shopName: EditText
-    private lateinit var shopAddress :EditText
-    private lateinit var shopMobNo: EditText
+    lateinit var shopName: EditText
+    lateinit var shopAddress :EditText
+    lateinit var shopMobNo: EditText
     private lateinit var btnSaveData : Button
 
-    private lateinit var dbRef : DatabaseReference
+    lateinit var dbRef : DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class InsertionActivity : AppCompatActivity(){
         }
 
     }
-    private fun saveShopsData(){
+    fun saveShopsData(){
         val sName = shopName.text.toString()
         val sAddress = shopAddress.text.toString()
         val sMob = shopMobNo.text.toString()
